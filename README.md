@@ -1,7 +1,7 @@
 text
 # Decentralized Crowdfunding Platform
 
-A blockchain-based crowdfunding platform built with Solidity, Truffle, Ganache, React, and Web3.js. This platform allows users to create campaigns, contribute ETH, and automatically releases or refunds funds after the campaign deadline using Chainlink Keepers.
+A blockchain-based crowdfunding platform built with Solidity, Truffle, Ganache, React, and Web3.js. This platform allows users to create campaigns, contribute ETH, and automatically releases or refunds funds after the campaign deadline.
 
 ---
 
