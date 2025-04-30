@@ -1,17 +1,17 @@
-text
+
 # Decentralized Crowdfunding Platform
 
-A blockchain-based crowdfunding platform built with Solidity, Truffle, Ganache, React, and Web3.js. This platform allows users to create campaigns, contribute ETH, and automatically releases or refunds funds after the campaign deadline.
+A blockchain-based crowdfunding platform built with Solidity, Truffle, Ganache, React, and Web3.js. This platform allows users to create campaigns, contribute ETH, and manually release or refund funds after the campaign deadline.
 
 ---
 
 ## Team Members
 
-| Name                | Roll Number     |
-|---------------------|-----------------|
-| Alice Example       | 21CS1001        |
-| Bob Example         | 21CS1002        |
-| Carol Example       | 21CS1003        |
+| Name           | Roll Number |
+|----------------|-------------|
+| Alice Example  | 21CS1001    |
+| Bob Example    | 21CS1002    |
+| Carol Example  | 21CS1003    |
 
 ---
 
@@ -22,6 +22,7 @@ This project demonstrates a decentralized crowdfunding system where:
 - Users can contribute ETH to active campaigns.
 - If the goal is met by the deadline, the campaign creator can claim the funds.
 - If the goal is not met, contributors are refunded.
+- After the deadline, any user can manually trigger the release or refund.
 
 ---
 
@@ -31,7 +32,6 @@ This project demonstrates a decentralized crowdfunding system where:
 - [Truffle](https://trufflesuite.com/truffle/)
 - [Ganache GUI](https://trufflesuite.com/ganache/)
 - [MetaMask](https://metamask.io/) browser extension
-- [Chainlink Keepers](https://automation.chain.link/) (for automation, optional for local testing)
 
 ---
 
@@ -39,87 +39,96 @@ This project demonstrates a decentralized crowdfunding system where:
 
 ### 1. Clone the Repository
 
+```bash
 git clone <your-repo-url>
 cd crowdfunding-platform
-
+```
 
 ### 2. Install Dependencies
 
+```bash
 npm install
+```
 
+### 3. Install OpenZeppelin Contracts
 
-### 3. Install OpenZeppelin and Chainlink Contracts
-
-npm install @openzeppelin/contracts @chainlink/contracts
-
+```bash
+npm install @openzeppelin/contracts
+```
 
 ### 4. Start Ganache
 
 - Open Ganache GUI and start a new workspace.
-- Default RPC: `http://127.0.0.1:7545`
-- Chain ID: `1337`
+- Use the default settings:
+  - RPC Server: `http://127.0.0.1:7545`
+  - Chain ID: `1337`
 
 ### 5. Compile and Deploy the Smart Contract
 
+```bash
 truffle compile
 truffle migrate --network ganache
-
+```
 
 ### 6. Set Up the Frontend
 
+```bash
 cd frontend
 npm install
+```
 
-
-- Copy the `Crowdfunding.json` file from `../build/contracts/` to `frontend/src/`.
-- In `frontend/src/crowdfunding.js`, update the contract address to match your deployed address.
+- Copy `Crowdfunding.json` from `../build/contracts/` to `frontend/src/`.
+- In `frontend/src/crowdfunding.js`, update the contract address with your deployed contract address.
 
 ### 7. Start the React Frontend
 
+```bash
 npm start
+```
 
-
-- Open [http://localhost:3000](http://localhost:3000) in your browser.
+- Open your browser and go to: [http://localhost:3000](http://localhost:3000)
 
 ### 8. Connect MetaMask
 
 - Add a custom network in MetaMask:
   - **Network Name:** Ganache
-  - **RPC URL:** `http://127.0.0.1:7545`
+  - **New RPC URL:** `http://127.0.0.1:7545`
   - **Chain ID:** `1337`
-- Import one or more private keys from Ganache into MetaMask.
+- Import one or more accounts from Ganache into MetaMask using private keys.
 
 ---
 
 ## Usage
 
-1. **Create a Campaign:**  
-   Fill in the campaign title, goal (ETH), and duration (seconds), then click "Create Campaign".
+1. **Create a Campaign**  
+   Enter a campaign title, goal (in ETH), and duration (in seconds), then click **Create Campaign**.
 
-2. **Contribute to a Campaign:**  
-   Enter an amount and click "Contribute". Approve the transaction in MetaMask.
+2. **Contribute to a Campaign**  
+   Input an amount and click **Contribute**. Confirm the transaction in MetaMask.
 
-3. **Automatic Release/Refund:**  
-   After the deadline, Chainlink Keepers (or manual trigger) will release funds to the creator if the goal is met, or refund contributors if not.
+3. **Manual Release or Refund**  
+   After the deadline has passed, any user can manually trigger the `releaseOrRefund` function for a campaign.  
+   - If the goal was met, funds are released to the creator.  
+   - If not, all contributors are refunded.
 
 ---
 
 ## Notes
 
-- For local testing, you can manually call the `releaseOrRefund` function after the campaign deadline.
-- For automatic processing, deploy on a public testnet and register your contract with [Chainlink Automation](https://automation.chain.link/).
-- Make sure MetaMask is connected to the Ganache network and using an imported Ganache account.
+- There is no automation or external service involved.
+- You must **manually trigger** fund release/refund after the deadline.
+- For local testing, you can call the `releaseOrRefund` function via the frontend or Truffle console.
+- MetaMask must be connected to the Ganache network with an imported account.
 
 ---
 
 ## Troubleshooting
 
-- **MetaMask not showing correct balance:**  
-  Ensure you imported the correct Ganache account and are connected to the Ganache network.
+- **MetaMask shows wrong account balance:**  
+  Ensure you've imported the correct account from Ganache and selected the right network.
 
-- **Contract not found:**  
-  Double-check the deployed contract address in `frontend/src/crowdfunding.js`.
+- **Frontend not interacting with contract:**  
+  Verify the contract address in `frontend/src/crowdfunding.js` is correct and matches your deployment.
 
----
-
-
+- **Campaign not updating after deadline:**  
+  Make sure to manually trigger the `releaseOrRefund` function. There’s no automation to handle it automatically.
