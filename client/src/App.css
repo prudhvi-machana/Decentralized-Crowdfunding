@@ -1,0 +1,15 @@
+/* App.css */
+/* Only add custom styles here if you need them. */
+/* Example: Custom animation for a logo */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.logo-spin {
+  animation: spin-slow 10s linear infinite;
+}
