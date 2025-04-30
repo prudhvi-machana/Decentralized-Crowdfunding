@@ -43,19 +43,16 @@ This project demonstrates a decentralized crowdfunding system where:
 git clone <your-repo-url>
 cd crowdfunding-platform
 
-text
 
 ### 2. Install Dependencies
 
 npm install
 
-text
 
 ### 3. Install OpenZeppelin and Chainlink Contracts
 
 npm install @openzeppelin/contracts @chainlink/contracts
 
-text
 
 ### 4. Start Ganache
 
@@ -68,14 +65,12 @@ text
 truffle compile
 truffle migrate --network ganache
 
-text
 
 ### 6. Set Up the Frontend
 
 cd frontend
 npm install
 
-text
 
 - Copy the `Crowdfunding.json` file from `../build/contracts/` to `frontend/src/`.
 - In `frontend/src/crowdfunding.js`, update the contract address to match your deployed address.
@@ -84,7 +79,6 @@ text
 
 npm start
 
-text
 
 - Open [http://localhost:3000](http://localhost:3000) in your browser.
 
@@ -127,39 +121,6 @@ text
 - **Contract not found:**  
   Double-check the deployed contract address in `frontend/src/crowdfunding.js`.
 
-- **Chainlink Keepers not working locally:**  
-  Automation only works on public testnets/mainnet with LINK funding.
-
 ---
 
-## File Structure
 
-crowdfunding-platform/
-├── contracts/
-│ └── Crowdfunding.sol
-├── migrations/
-│ └── 2_deploy_contracts.js
-├── build/
-│ └── contracts/
-│ └── Crowdfunding.json
-├── frontend/
-│ ├── src/
-│ │ ├── App.js
-│ │ ├── CreateCampaign.js
-│ │ ├── CampaignList.js
-│ │ ├── crowdfunding.js
-│ │ ├── web3.js
-│ │ └── Crowdfunding.json
-│ └── package.json
-├── truffle-config.js
-└── README.md
-
-text
-
----
-
-## License
-
-This project is licensed under the MIT License.
-
----
