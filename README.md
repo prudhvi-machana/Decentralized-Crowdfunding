@@ -7,12 +7,14 @@ A blockchain-based crowdfunding platform built with Solidity, Truffle, Ganache, 
 
 ## Team Members
 
-| Name           | Roll Number |
-|----------------|-------------|
-| Alice Example  | 21CS1001    |
-| Bob Example    | 21CS1002    |
-| Carol Example  | 21CS1003    |
-
+| Name                | Roll Number  |
+|---------------------|--------------|
+| M.M.Prudhvi Sai     | 230001047    |
+| L.Yashwanth Chowhan | 230001046    |
+| M.Rishik Preetham   | 230001048    |
+| M.Rajavardhan       | 230001053    |
+| Mohit Katariya      | 230001055    |
+| L.Praveen Kumar     | 230041018    |
 ---
 
 ## Project Overview
