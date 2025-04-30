@@ -54,7 +54,7 @@ npm install
 ### 3. Install OpenZeppelin Contracts
 
 ```bash
-npm install @openzeppelin/contracts
+npm install @openzeppelin/contracts@4.9.3
 ```
 
 ### 4. Start Ganache
