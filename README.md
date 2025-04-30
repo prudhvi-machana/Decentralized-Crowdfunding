@@ -68,7 +68,7 @@ npm install @openzeppelin/contracts@4.9.3
 
 ```bash
 truffle compile
-truffle migrate --network ganache
+truffle migrate
 ```
 
 ### 6. Set Up the Frontend
@@ -79,7 +79,7 @@ npm install
 ```
 
 - Copy `Crowdfunding.json` from `../build/contracts/` to `frontend/src/`.
-- In `frontend/src/crowdfunding.js`, update the contract address with your deployed contract address.
+- In `frontend/src/crowdfunding.js`,`frontend/src/CrowdfundingUI.jsx` update the contract address with your deployed contract address.
 
 ### 7. Start the React Frontend
 
