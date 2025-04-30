@@ -33,7 +33,7 @@ This project demonstrates a decentralized crowdfunding system where:
 - [Truffle](https://trufflesuite.com/truffle/)
 - [Ganache GUI](https://trufflesuite.com/ganache/)
 - [MetaMask](https://metamask.io/) browser extension
-
+- Web3.js (package)
 ---
 
 ## Installation & Setup
