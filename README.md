@@ -22,7 +22,6 @@ This project demonstrates a decentralized crowdfunding system where:
 - Users can contribute ETH to active campaigns.
 - If the goal is met by the deadline, the campaign creator can claim the funds.
 - If the goal is not met, contributors are refunded.
-- The process can be automated using Chainlink Keepers.
 
 ---
 
