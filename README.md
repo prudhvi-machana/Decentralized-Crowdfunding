@@ -1,7 +1,7 @@
 
 # Decentralized Crowdfunding Platform
 
-A blockchain-based crowdfunding platform built with Solidity, Truffle, Ganache, React, and Web3.js. This platform allows users to create campaigns, contribute ETH, and manually release or refund funds after the campaign deadline.
+A blockchain-based crowdfunding platform built with Solidity, Truffle, Ganache, React, and Web3.js. This platform allows users to create campaigns, contribute ETH, and release or refund funds based on the campaign outcome.
 
 ---
 
@@ -22,7 +22,6 @@ This project demonstrates a decentralized crowdfunding system where:
 - Users can contribute ETH to active campaigns.
 - If the goal is met by the deadline, the campaign creator can claim the funds.
 - If the goal is not met, contributors are refunded.
-- After the deadline, any user can manually trigger the release or refund.
 
 ---
 
@@ -106,19 +105,17 @@ npm start
 2. **Contribute to a Campaign**  
    Input an amount and click **Contribute**. Confirm the transaction in MetaMask.
 
-3. **Manual Release or Refund**  
-   After the deadline has passed, any user can manually trigger the `releaseOrRefund` function for a campaign.  
-   - If the goal was met, funds are released to the creator.  
-   - If not, all contributors are refunded.
+3. **Release or Refund Funds**  
+   After the campaign deadline, the contract evaluates whether the goal was met.  
+   - If the goal was met, funds are transferred to the campaign creator.  
+   - If not, all contributors get refunded.
 
 ---
 
 ## Notes
 
-- There is no automation or external service involved.
-- You must **manually trigger** fund release/refund after the deadline.
-- For local testing, you can call the `releaseOrRefund` function via the frontend or Truffle console.
-- MetaMask must be connected to the Ganache network with an imported account.
+- Make sure MetaMask is connected to the Ganache network and using an imported Ganache account.
+- Ensure correct deployment by verifying the contract address in the frontend matches the deployed address.
 
 ---
 
@@ -131,4 +128,4 @@ npm start
   Verify the contract address in `frontend/src/crowdfunding.js` is correct and matches your deployment.
 
 - **Campaign not updating after deadline:**  
-  Make sure to manually trigger the `releaseOrRefund` function. There’s no automation to handle it automatically.
+  Ensure the deadline has passed and try again.
