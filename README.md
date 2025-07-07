@@ -19,7 +19,7 @@ A blockchain-based crowdfunding platform built with Solidity, Truffle, Ganache, 
 
 ## Project Overview
 
-This project demonstrates a decentralized crowdfunding system where:
+This project demonstrates a decentralized crowdfunding system where: 
 - Anyone can create a fundraising campaign with a goal and deadline.
 - Users can contribute ETH to active campaigns.
 - If the goal is met by the deadline, the campaign creator can claim the funds.
