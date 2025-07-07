@@ -86,7 +86,7 @@ npm install
 ```bash
 npm start
 ```
-
+   and then follow this instruction
 - Open your browser and go to: [http://localhost:3000](http://localhost:3000)
 
 ### 8. Connect MetaMask
