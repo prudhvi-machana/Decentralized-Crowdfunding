@@ -9,7 +9,7 @@
           "internalType": "address",
           "name": "newVersion",
           "type": "address"
-        }
+        }      
       ],
       "name": "NewVersionRegistered",
       "type": "event"

@@ -7,7 +7,9 @@
           "internalType": "uint256",
           "name": "_campaignId",
           "type": "uint256"
-        }
+        }     
+
+       
       ],
       "name": "contribute",
       "outputs": [],
