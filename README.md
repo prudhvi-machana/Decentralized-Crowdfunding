@@ -1,4 +1,4 @@
-
+ 
 # Decentralized Crowdfunding Platform
 
 A blockchain-based crowdfunding platform built with Solidity, Truffle, Ganache, React, and Web3.js. This platform allows users to create campaigns, contribute ETH, and release or refund funds based on the campaign outcome.
